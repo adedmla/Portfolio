@@ -1,18 +1,41 @@
-*{
+:root {
+  --bg-primary: #0d1117;
+  --bg-secondary: #161b22;
+  --text-primary: #c9d1d9;
+  --text-secondary: #8b949e;
+  --accent-purple: #a371f7;
+  --accent-purple-hover: #b794f5;
+  --border-color: #30363d;
+}
+
+* {
     font-family: monospace;
 }
 
-a{
+body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+}
+
+a {
+    text-decoration: none;
+    transition: color 0.2s ease-in-out;
+}
+
+a:visited, a:link {
+    color: var(--text-primary);
     text-decoration: none;
 }
-a:visited,a:link{
-    color:black;
-    text-decoration: none;
+
+a:hover {
+    color: var(--accent-purple);
 }
-h1{
+
+h1 {
     margin: 0;
     font-size: clamp(20px, 5vw, 40px);
     line-height: 1.1;
+    color: var(--text-primary);
 }
 
 p {
@@ -23,6 +46,7 @@ p {
     margin-inline-end: 0px;
     unicode-bidi: isolate;
 }
+
 .nav-bar {
     display: flex;
     position: fixed;
@@ -30,15 +54,15 @@ p {
     left: 0px;
     top: 0px;
     right: 0px;
-    border: solid;
+    border: 1px solid var(--border-color);
     font-size: 1.125rem;
     line-height: 1.75rem;
-    background-color: white;
+    background-color: var(--bg-secondary);
     z-index: 1000;
     padding: 1rem;
 }
 
-.nav-bar a{
+.nav-bar a {
     text-decoration: none;
     cursor: pointer;
 }
@@ -59,18 +83,21 @@ p {
     top: 70%;
     transform: translateY(-50%);
     left: 20px;
-    background-color: #f0fff0; /* Light green */
     gap: 20px;
-
+    padding: 1rem 0;
 }
 
 .sidebar i {
     font-size: 24px;
     line-height: 1.5;
-    color: black;
+    color: var(--text-primary);
+    transition: color 0.2s ease-in-out;
 }
 
-/* New styles for sections */
+.sidebar i:hover {
+    color: var(--accent-purple);
+}
+
 .content {
     padding-top: 80px;
     padding-left: calc(4vw + 30px);
@@ -78,7 +105,7 @@ p {
     box-sizing: border-box;
 }
 
-.section{
+.section {
     position: relative;
     display: flex;
     align-items: center;
@@ -86,29 +113,14 @@ p {
     justify-content: center;
 }
 
-#home{
-    background-color: lightcoral;
-}
-/* Different background colors for each section */
-#about-me {
-    background-color: #f0f8ff; /* Light blue */
-}
-
-#experience {
-    background-color: #f0fff0; /* Light green */
-}
-
-#projects {
-    background-color: #fff0f5; /* Light pink */
-}
-
-#resume {
-    background-color: #fffff0; /* Light yellow */
+#home, #about-me, #experience, #projects, #resume {
+    background-color: var(--bg-primary);
 }
 
 .section h2 {
     font-size: 2.5rem;
     margin-bottom: 2rem;
+    color: var(--text-primary);
 }
 
 .section-content {
@@ -117,7 +129,7 @@ p {
     padding: 0 2rem;
 }
 
-.intro-container{
+.intro-container {
     min-height: 100vh;
     padding: 2rem;
     display: flex;
@@ -132,8 +144,9 @@ p {
     max-width: 70vw;
 }
 
-.title p{
+.title p {
     font-size: 1em;
+    color: var(--text-secondary);
 }
 
 .text-lg {
@@ -150,10 +163,10 @@ p {
 
 .main-content {
     width: 80%;
-    border-color: black;
-    border-style: solid;
-    padding: 20px 30px 20px 30px;
-
+    border: 1px solid var(--border-color);
+    background-color: var(--bg-secondary);
+    padding: 20px 30px;
+    border-radius: 8px;
 }
 
 .section-header:after {
@@ -164,7 +177,7 @@ p {
     width: 10em;
     height: 1px;
     margin-left: 20px;
-    background-color: var(--light-gray);
+    background-color: var(--border-color);
 }
 
 .portfolio-header {
@@ -177,33 +190,36 @@ p {
 }
 
 .portfolio-header span {
-    margin-right: 1rem;  /* Reduced from 1rem to 0.5rem to bring line closer */
-    /* or you could even go smaller like 0.25rem */
+    margin-right: 1rem;
+    color: #e6edf3;
 }
 
 .portfolio-header::after {
     content: '';
     flex: 1;
     height: 1px;
-    background-color: #000;
+    background-color: var(--border-color);
 }
 
-.main-content p{
+.main-content p {
     margin-bottom: 1rem;
     font-size: 1.5rem;
+    color: var(--text-secondary);
 }
 
-.list-box{
+.list-box {
     display: flex;
     align-items: center;
+    gap: 2rem;
 }
 
-.list-box li{
+.list-box li {
     font-size: 1.5rem;
     font-weight: 400;
+    color: var(--text-secondary);
 }
 
-.experience-item{
+.experience-item {
     display: grid;
     grid-template-columns: 300px 1px 1fr;
     gap: 20px;
@@ -211,10 +227,10 @@ p {
     align-items: center;
 }
 
-.line{
+.line {
     height: 80%;
     width: 1px;
-    background-color: orange;
+    background-color: var(--accent-purple);
 }
 
 .projects-grid {
@@ -233,30 +249,101 @@ p {
     width: 100%;
     max-width: 25rem;
     margin: 0 auto;
-    background-color: darkcyan;
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-color);
     border-radius: 1rem;
     padding: 24px;
-    gap: 1rem; /* Adds consistent spacing between elements */
+    gap: 1rem;
+    transition: transform 0.2s ease-in-out;
 }
 
+.projects-box:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent-purple);
+}
 
-.project-heading{
+.project-heading {
     padding-top: 1rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-
-
-.project-description{
-    text-align: left;
+.project-heading h3 {
+    color: var(--text-primary);
 }
 
-.project-languages button{
-    border-style: solid;
-    border-width: 1px;
+.project-description {
+    text-align: left;
+    color: var(--text-secondary);
+}
+
+.project-languages button {
+    border: 1px solid var(--accent-purple);
     border-radius: 1rem;
     background-color: transparent;
-    color: white;
+    color: var(--accent-purple);
+    padding: 0.25rem 0.75rem;
+    transition: all 0.2s ease-in-out;
+}
+
+.project-languages button:hover {
+    background-color: var(--accent-purple);
+    color: var(--bg-primary);
+}
+
+.project-heading a {
+    color: var(--text-primary);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.project-heading a:hover {
+    color: var(--accent-purple);
+}
+
+.project-heading i {
+    margin: 0 8px; 
+}
+
+@media screen and (max-width: 768px) {
+    .projects-grid {
+        grid-template-columns: 1fr;
+        max-width: 90%;
+    }
+
+    .main-content {
+        width: 90%;
+    }
+
+    .experience-item {
+        grid-template-columns: 200px 1px 1fr;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .nav-bar {
+        padding: 0.5rem;
+    }
+
+    .links-container {
+        font-size: 0.9rem;
+    }
+
+    .main-content p {
+        font-size: 1.2rem;
+    }
+
+    .experience-item {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .line {
+        display: none;
+    }
+
+    .sidebar {
+        display: none;
+    }
 }
