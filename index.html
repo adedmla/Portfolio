@@ -15,6 +15,7 @@
       src="https://kit.fontawesome.com/be900ffd84.js"
       crossorigin="anonymous"
     ></script>
+    <script src="script.js" defer></script>
   </head>
   <body>
     <nav class="nav-bar">
@@ -33,7 +34,26 @@
           >
         </div>
       </div>
+      <button id="theme-toggle" class="theme-toggle" onclick="toggleTheme()">
+        <i class="fa-regular fa-moon"></i>
+      </button>
+      <button id="menu-toggle" class="menu-toggle" onclick="toggleMenu()">
+        <i class="fa-solid fa-bars"></i>
+      </button>
     </nav>
+
+\    <div id="mobile-menu" class="mobile-menu">
+      <div><a href="#about-me" onclick="toggleMenu()">.about me</a></div>
+      <div><a href="#experience" onclick="toggleMenu()">.experience</a></div>
+      <div><a href="#projects" onclick="toggleMenu()">.projects</a></div>
+      <div>
+        <a
+          href="https://drive.google.com/drive/folders/1KLazSjp07ZeDgfAR4VGYV9pFFBzef0RS?usp=sharing"
+          target="_blank"
+          >.resume</a
+        >
+      </div>
+    </div>
 
     <main class="content">
       <section id="home" class="section" style="justify-content: start">
@@ -47,7 +67,7 @@
               studying computer science. Different technologies are my legos - I
               enjoy piecing them together to build things that matter. My
               interests lie in application development, systems programming, and
-              machine learning. I’m currently still exploring all the building
+              machine learning. I'm currently still exploring all the building
               blocks tech has to offer.
             </p>
           </div>
@@ -71,7 +91,7 @@
             Emerging Coders, the National Society of Black Engineers, and the
             Institute of Electrical Electronics Engineers (IEEE). This past
             quarter, I was an Undergraduate Teaching Assistant for
-            Northwestern’s CS department for CS 214 (Data Structures &
+            Northwestern's CS department for CS 214 (Data Structures &
             Algorithms), where I had the privilege of helping students
             strengthen their understanding of fundamental computer science
             concepts through office hours.
@@ -116,7 +136,26 @@
             <div class="line"></div>
             <div class="right-section">
               <p style="font-weight: 700">Dimensional Fund Advisors</p>
-              <p>Software Engineer Intern</p>
+              <p>Incoming Software Engineer Intern</p>
+            </div>
+          </div>
+
+          <div class="experience-item">
+            <div class="left-section">
+              <p>Jan 2025 - Present</p>
+              <p>Evanston, IL</p>
+            </div>
+            <div class="line"></div>
+            <div class="right-section">
+              <p style="font-weight: 700">
+                Responsibility AI Student Organization (RAISO)
+              </p>
+              <p>Web Developer</p>
+              <p>
+                Contributed to the development of RAISO's website by
+                implementing responsive design features, optimizing performance,
+                and ensuring accessibility compliance.
+              </p>
             </div>
           </div>
 
@@ -187,7 +226,7 @@
 
             <div class="projects-box">
               <div class="project-heading">
-                <h3>tripPlanner api</h3>
+                <h3>Mobile Clinic Optimization</h3>
                 <div>
                   <a href="#projects"
                     ><i class="fa-brands fa-github-alt"></i
@@ -197,9 +236,10 @@
               </div>
 
               <div class="project-description">
-                tripPlanner api is a tool designed to process map data for
-                locating points of interests, determining optimal routes, and
-                identifying nearby destinations.
+                Mobile clinic optimization platform using data and predictive
+                insights to efficiently reach underserved, high-need areas;
+                especially in Southern and Western Illinois. Designed for
+                healthcare providers, researchers, and community members.
               </div>
 
               <div class="project-languages">
@@ -210,11 +250,9 @@
 
             <div class="projects-box">
               <div class="project-heading">
-                <h3>word wizardry</h3>
+                <h3>VocalInk</h3>
                 <div>
-                  <a
-                    href="https://github.com/adedmla/Word-Wizardry-.git"
-                    target="_blank"
+                  <a href="#projects" target="_blank"
                     ><i class="fa-brands fa-github-alt"></i
                   ></a>
                   <i class="fa-solid fa-link"></i>
@@ -222,21 +260,21 @@
               </div>
 
               <div class="project-description">
-                word wizardry is a Python-based word guessing game built using
-                object-oriented programming. The game retrieves a random word
-                from an external API for each round. Players interact through a
-                text-based interface, attempting to guess the hidden word by
-                suggesting letters.
+                Built a serverless pipeline to transcribe podcasts and analyze
+                sentiment. Designed REST APIs for audio management and job
+                tracking using AWS Lambda and API Gateway.
               </div>
 
               <div class="project-languages">
                 <button>Python</button>
+                <button>AWS</button>
+                <button>MySQL</button>
               </div>
             </div>
 
             <div class="projects-box">
               <div class="project-heading">
-                <h3>navBus</h3>
+                <h3>Cloud Based Management System</h3>
                 <div>
                   <a href="#projects"
                     ><i class="fa-brands fa-github-alt"></i
@@ -246,15 +284,15 @@
               </div>
 
               <div class="project-description">
-                navBus is an interactive map for Northwestern University's
-                Evanston campus, providing real-time CTA bus info. Users can
-                search for a building to find nearby northbound and southbound
-                bus stops and access bus arrival predictions via the CTA Bus
-                Tracker API.
+                Cloud-based photo management tool with image upload/download
+                features. Integrated AWS Rekognition to detect and categorize
+                image content automatically.
               </div>
 
               <div class="project-languages">
-                <button>C++</button>
+                <button>Python</button>
+                <button>AWS</button>
+                <button>Rekognition</button>
               </div>
             </div>
           </div>
